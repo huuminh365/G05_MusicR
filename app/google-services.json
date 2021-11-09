@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1069223049747",
+    "project_id": "doancuoiki-31a1c",
+    "storage_bucket": "doancuoiki-31a1c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069223049747:android:d3567a16462f94d7ec1de6",
+        "android_client_info": {
+          "package_name": "iuh.doancuoiki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069223049747-d6fakv1p23fvv40bare2b8j5gr9f19hi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_I1C8YKP8P4xLT_jb9t4dYNliEjQKhJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069223049747-d6fakv1p23fvv40bare2b8j5gr9f19hi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
