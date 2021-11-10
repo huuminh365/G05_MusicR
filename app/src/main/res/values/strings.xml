@@ -2,4 +2,9 @@
     <string name="app_name">DoAnCuoiKi</string>
     <string name="facebook_app_id">1247347469085122</string>
     <string name="fb_login_protocol_scheme">fb1247347469085122</string>
+    <string name="create_account">Create account</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="user_name">User name</string>
+
 </resources>

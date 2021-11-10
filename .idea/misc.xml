@@ -6,7 +6,9 @@
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/gradient_color.xml" value="0.2703125" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/icon_color.xml" value="0.2703125" />
-        <entry key="..\:/DoAnCuoiKi/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/DoAnCuoiKi/app/src/main/res/layout/activity_create_account.xml" value="0.25416666666666665" />
+        <entry key="..\:/DoAnCuoiKi/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/DoAnCuoiKi/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/layout/activity_main.xml" value="0.264" />
       </map>
     </option>

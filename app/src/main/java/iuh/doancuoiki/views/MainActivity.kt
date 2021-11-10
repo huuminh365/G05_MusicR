@@ -11,17 +11,17 @@ import com.facebook.GraphRequest
 import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import iuh.doancuoiki.R
-import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_login.*
 import java.lang.Exception
 
 
-class HomeActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     lateinit var callbackManage : CallbackManager
     private var EMAIL = "email"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_login)
 
         login_button.setOnClickListener {
             login_button.setReadPermissions(listOf(EMAIL))
