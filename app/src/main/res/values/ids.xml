@@ -1,6 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="etEmail" type="id">etEmail</item>
-    <item name="etPassword" type="id">etPassword</item>
-    <item name="etConfirmPassword" type="id">etConfirmPassword</item>
 </resources>

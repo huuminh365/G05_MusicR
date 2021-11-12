@@ -1,7 +1,5 @@
 package iuh.doancuoiki.views
 
-/** include your package here **/
-
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
