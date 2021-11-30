@@ -13,7 +13,6 @@ import com.facebook.login.LoginResult
 import iuh.doancuoiki.R
 import iuh.doancuoiki.extensions.Extensions.toast
 import iuh.doancuoiki.utils.FirebaseUtils.firebaseAuth
-import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.login_button
 
@@ -69,6 +68,6 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)  {
         super.onActivityResult(requestCode, resultCode, data)
         callbackManage.onActivityResult(requestCode, resultCode, data)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_listsong)
     }
 }
