@@ -11,7 +11,7 @@ class MusicDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.song_information)
+        setContentView(R.layout.lyrics)
 
         var bundle = intent.extras
 
