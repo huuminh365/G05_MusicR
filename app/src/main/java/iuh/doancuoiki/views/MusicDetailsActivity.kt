@@ -21,7 +21,6 @@ class MusicDetailsActivity : AppCompatActivity() {
                 song = Song(documentSnapshot)
                 name.text = song!!.name
                 singer.text = song!!.singer
-                topic.text = song!!.topic
             }
     }
 }

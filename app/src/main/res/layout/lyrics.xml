@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgound"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageSong"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp"
+                android:paddingTop="5dp"
+                app:srcCompat="@drawable/_516930244148_640" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/namesong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:text="Lạ lùng"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/singer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:text="Vũ"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/lyrics"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/cabin"
+                    android:lineSpacingExtra="12sp"
+                    android:paddingLeft="20dp"
+                    android:text="Kìa màn [C]đêm hiu hắt [G/B], Mang tên [A7]em quay về trong ký [Dm7]ức , Của [G]anh qua [C]thời gian Chiều lặng [C]im nghe [G/B]gió  Đung đưa [A7]cây , Như là bao nỗi [Dm7]nhớ  cuốn [G]anh trôi [C]về đâu ? Này [F]gió đừng [G]hát , Và [E7]mang  nỗi nhớ [Am]chạ̣y đi [F]quên âu lo, Quên [G]hết  suy tư [C]một  đời. [C7] [F]Mưa trong anh sẽ [G]vơi , Nhưng [E]đôi  môi đang vấn [Am]vương , [F]Chỉ tình cờ nhìn em rồi mang theo [G]những  cơn đau thét gào.Lạ lùng em [C]tới….[E]ới , tới [Am]bên anh  trong chiều đông xa vắng…mà [F]saoGiờ đây nhìn [G]lại chẳng còn thấy [C] em. [C7]Lạ lùng em [C]với....[E]gió hát [Am]lên câu ca  làm anh thao thức, Mà [F]bao say mê nồng [G]nàn giờ đã phai [C]mau Kìa [F]nắng ngập [G]tràn , những  giấc [Em]mơ lại vừa bay [A7]đi , Gạt [F]hết cuộc đời lẻ loi. Thôi mình [G]anh, lại ngồi nhớ [C]em!"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    tools:layout_editor_absoluteX="16dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

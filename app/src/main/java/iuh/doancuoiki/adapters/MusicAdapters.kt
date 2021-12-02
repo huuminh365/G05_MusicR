@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import iuh.doancuoiki.R
@@ -29,7 +30,7 @@ class MusicAdapters(val context: Context, val layoutId: Int, val songs: ArrayLis
         val song = songs[position]
         holder.name.text = song.name
         holder.singer.text = song.singer
-        holder.topic.text = song.topic
+        song.setPic(context, holder.image)
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, MusicDetailsActivity::class.java)
@@ -46,11 +47,11 @@ class MusicAdapters(val context: Context, val layoutId: Int, val songs: ArrayLis
     class ViewHolder(layoutId: Int, itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name : TextView
         var singer : TextView
-        var topic : TextView
+        var image : ImageView
         init {
             name = itemView.findViewById(R.id.name)
             singer = itemView.findViewById(R.id.singer)
-            topic = itemView.findViewById(R.id.topic)
+            image = itemView.findViewById(R.id.image)
         }
     }
 }

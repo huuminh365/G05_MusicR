@@ -34,7 +34,7 @@
 
 <!--ListSongActivity-->
         <activity
-            android:name=".views.ListSongActivity"
+            android:name=".views.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,7 +46,7 @@
 
 <!--        MainActivity-->
         <activity
-            android:name=".views.MainActivity"
+            android:name=".views.ListSongActivity"
             android:exported="true">
         </activity>
 
@@ -59,7 +59,7 @@
 
 <!--        SignInActivity-->
         <activity
-            android:name=".views.SignInActivity"
+            android:name=".views.MainActivity"
             android:exported="true">
         </activity>
 

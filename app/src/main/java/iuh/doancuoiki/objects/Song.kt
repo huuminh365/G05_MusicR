@@ -1,10 +1,13 @@
 package iuh.doancuoiki.objects
 
+import android.content.Context
+import android.widget.ImageView
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.QuerySnapshot
 import iuh.doancuoiki.utils.FirebaseUtils
-
+import com.squareup.picasso.Picasso
+import iuh.doancuoiki.R
 
 class Song() {
     var id : String?  = null
@@ -17,7 +20,9 @@ class Song() {
     constructor(doc : DocumentSnapshot) : this() {
         id = doc.id
         name = doc.getString("name")
-        singer = doc.getString("singer")
+        singer = doc.getString("singer")?.replace("['","")
+            ?.replace("'","")?.replace("]","")
+
         topic = doc.getString("topic")
         image = doc.getString("image")
         rating = doc.getDouble("rating")!!
@@ -47,6 +52,21 @@ class Song() {
                 }
         }
     }
+
+    fun setPic(context : Context, imageView : ImageView) {
+        if (image != null) {
+            // Get download url, and let Picasso load the image url into imageView
+            Picasso.get().load(image)
+                .placeholder(R.drawable.ic_error)
+//                .resize(50, 50)
+//                .centerCrop()
+                .into(imageView)
+        } else {
+            Picasso.get().load(R.drawable.ic_error).into(imageView)
+        }
+    }
+
+
 
     companion object {
         const val collection = "PTUD"

@@ -28,20 +28,10 @@ class CreateAccountActivity : AppCompatActivity() {
         sign_in.setOnClickListener {
             startActivity(Intent(this, SignInActivity::class.java))
             toast("please sign into your account")
-            finish()
+//            finish()
         }
     }
 
-    /* check if there's a signed-in user*/
-
-    override fun onStart() {
-        super.onStart()
-        val user: FirebaseUser? = firebaseAuth.currentUser
-        user?.let {
-            startActivity(Intent(this, MainActivity::class.java))
-            toast("welcome back")
-        }
-    }
 
     private fun notEmpty(): Boolean = username.text.toString().trim().isNotEmpty() &&
             password.text.toString().trim().isNotEmpty() &&
@@ -77,7 +67,7 @@ class CreateAccountActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         toast("created account successfully !")
                         sendEmailVerification()
-                        startActivity(Intent(this, MainActivity::class.java))
+                        startActivity(Intent(this, SignInActivity::class.java))
                         finish()
                     } else {
                         toast("failed to Authenticate !")
