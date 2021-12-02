@@ -15,6 +15,7 @@ class Song() {
     var singer : String? = null
     var topic : String? = null
     var image : String? = null
+    var lyrics : String? = null
     var rating : Double = 0.0
 
     constructor(doc : DocumentSnapshot) : this() {
@@ -26,6 +27,7 @@ class Song() {
         topic = doc.getString("topic")
         image = doc.getString("image")
         rating = doc.getDouble("rating")!!
+        lyrics = doc.getString("lyrics")
     }
 
     fun set() : Task<String> {
@@ -34,7 +36,9 @@ class Song() {
             "singer" to singer,
             "topic" to topic,
             "image" to image,
-            "rating" to rating
+            "rating" to rating,
+            "lyrics" to lyrics
+
         )
 
         if(id != null){
