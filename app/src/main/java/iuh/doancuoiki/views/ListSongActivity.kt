@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.song_information.*
 class ListSongActivity : AppCompatActivity() {
     val songs = ArrayList<Song>()
     var adapterQuickView: MusicAdapters? = null
-
+//    var  clickChecker: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listsong)
@@ -39,8 +39,15 @@ class ListSongActivity : AppCompatActivity() {
                     "fromCloudFirestore: Error loading ContactInfo data from Firestore - " + e.message
                 );
             };
-//        image.setOnClickListener {
-//            startActivity(Intent(this, ViewLyricsActivity::class.java))
+
+//        button_loveSong.setOnClickListener {
+//            clickChecker = clickChecker xor true
+//            if (clickChecker) {
+//                button_loveSong.setBackgroundResource(R.drawable.heart_on)
+//            }
+//            else {
+//                button_loveSong.setBackgroundResource(R.drawable.heart_off)
+//            }
 //        }
     }
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DoAnCuoiKi</string>
+    <string name="app_name">Music R</string>
     <string name="facebook_app_id">1247347469085122</string>
     <string name="fb_login_protocol_scheme">fb1247347469085122</string>
     <string name="create_account">Create account</string>
@@ -8,5 +8,6 @@
     <string name="user_name">User name</string>
     <string name="musics">musics</string>
     <string name="home">home</string>
-
+    <string name="name_song">Name song</string>
+    <string name="lyrics">Lyrics</string>>
 </resources>

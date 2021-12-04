@@ -88,8 +88,8 @@ class SignInActivity : AppCompatActivity() {
         super.onStart()
         val user: FirebaseUser? = firebaseAuth.currentUser // check xem da dang nhap chua, yes-> home
         user?.let {
-//            startActivity(Intent(this, ListSongActivity::class.java))
-//            toast("welcome back")
+            startActivity(Intent(this, ListSongActivity::class.java))
+            toast("welcome back")
         }
     }
 

@@ -1,6 +1,7 @@
 package iuh.doancuoiki.objects
 
 import android.content.Context
+import android.widget.ImageButton
 import android.widget.ImageView
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.DocumentSnapshot
@@ -83,7 +84,7 @@ class Song() {
             // Get 10 first songs
             return FirebaseUtils.db.collection(collection)
                 .orderBy("rating")
-                .limit( 10)
+//                .limit( 10)
                 .get()
 
         }
