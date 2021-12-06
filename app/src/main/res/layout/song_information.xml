@@ -71,15 +71,13 @@
 
             </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/button_loveSong"
+            <CheckBox
+                android:id="@+id/cbHeart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:backgroundTint="@color/white"
-                app:srcCompat="@drawable/heart_on"
-                app:tint="@color/backgound"
-                tools:ignore="SpeakableTextPresentCheck" />
+                app:useMaterialThemeColors="false"
+                android:button="@drawable/selector_wishlistsong"
+                android:layout_weight="1" />
 
         </LinearLayout>
 

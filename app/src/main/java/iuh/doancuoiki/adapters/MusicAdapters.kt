@@ -25,7 +25,6 @@ class MusicAdapters(val context: Context, val layoutId: Int, val songs: ArrayLis
         return ViewHolder(layoutId, view)
     }
 
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // Apply data into each view
         val song = songs[position]
@@ -41,6 +40,7 @@ class MusicAdapters(val context: Context, val layoutId: Int, val songs: ArrayLis
             context.startActivity(intent)
         }
     }
+
     override fun getItemCount(): Int {
         return songs.size
     }
@@ -49,12 +49,12 @@ class MusicAdapters(val context: Context, val layoutId: Int, val songs: ArrayLis
         var name : TextView
         var singer : TextView
         var image : ImageView
-        var button_loveSong : ImageButton
+
         init {
             name = itemView.findViewById(R.id.name)
             singer = itemView.findViewById(R.id.singer)
             image = itemView.findViewById(R.id.image)
-            button_loveSong = itemView.findViewById(R.id.button_loveSong)
+//            button_loveSong = itemView.findViewById(R.id.button_loveSong)
         }
     }
 }

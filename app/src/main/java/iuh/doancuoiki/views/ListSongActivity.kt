@@ -3,20 +3,25 @@ package iuh.doancuoiki.views
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import iuh.doancuoiki.R
 import iuh.doancuoiki.adapters.MusicAdapters
+import iuh.doancuoiki.extensions.Extensions.toast
 import iuh.doancuoiki.objects.Song
 import kotlinx.android.synthetic.main.activity_listsong.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.create_account
 import kotlinx.android.synthetic.main.lyrics.*
 import kotlinx.android.synthetic.main.song_information.*
+import android.widget.CompoundButton
+
+
+
 
 class ListSongActivity : AppCompatActivity() {
     val songs = ArrayList<Song>()
     var adapterQuickView: MusicAdapters? = null
-//    var  clickChecker: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listsong)
@@ -40,14 +45,13 @@ class ListSongActivity : AppCompatActivity() {
                 );
             };
 
-//        button_loveSong.setOnClickListener {
-//            clickChecker = clickChecker xor true
-//            if (clickChecker) {
-//                button_loveSong.setBackgroundResource(R.drawable.heart_on)
-//            }
-//            else {
-//                button_loveSong.setBackgroundResource(R.drawable.heart_off)
-//            }
-//        }
+        cbHeart.setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                toast("add sucessfull")
+            } else {
+                toast("removed huhu")
+            }
+        })
     }
+
 }

@@ -8,11 +8,14 @@
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/gradient_color.xml" value="0.2703125" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/heart_off.xml" value="0.28229166666666666" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/heart_on.xml" value="0.2703125" />
+        <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.2703125" />
+        <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.2703125" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2703125" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/ic_error.xml" value="0.18333333333333332" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/icon_color.xml" value="0.2703125" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/search_back.xml" value="0.2703125" />
+        <entry key="..\:/DoAnCuoiKi/app/src/main/res/drawable/selector_wishlistsong.xml" value="0.2703125" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/layout/activity_create_account.xml" value="0.25416666666666665" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/DoAnCuoiKi/app/src/main/res/layout/activity_listsong.xml" value="0.264" />

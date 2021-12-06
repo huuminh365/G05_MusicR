@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
         try {
             RequestJSON.instance().setURL("https://ptud2.herokuapp.com/").setMethod("GET").setQuery(queryObject).send(this, this::responseApiSuccess, this::responseApiError);
-            toast(this::responseApiSuccess.toString())
+            toast("succesfully")
         } catch (error: Exception) {
             error.printStackTrace();
 

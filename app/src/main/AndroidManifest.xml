@@ -36,7 +36,7 @@
 
 <!--ListSongActivity-->
         <activity
-            android:name=".views.MainActivity"
+            android:name=".views.ListSongActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,7 +48,7 @@
 
 <!--        MainActivity-->
         <activity
-            android:name=".views.ListSongActivity"
+            android:name=".views.MainActivity"
             android:exported="true">
         </activity>
 
