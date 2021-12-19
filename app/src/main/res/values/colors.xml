@@ -11,6 +11,10 @@
     <color name="green_start">#43e97b</color>
     <color name="green_end">#38f9d7</color>
     <color name="red">#F90716</color>
-    <color name="backgound">#D0F0E4</color>
+    <color name="backgound">#e4f7f2</color>
     <color name="pink">#EA2C62</color>
+    <color name="gray">#99A799</color>
+    <color name="blue_2">#bfd0f2</color>
+    <color name="colorLyrics">#5882ff</color>
+    <color name="backgound2">#BFF2E1</color>
 </resources>

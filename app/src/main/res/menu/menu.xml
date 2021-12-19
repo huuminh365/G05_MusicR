@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_home"
+        android:icon="@drawable/mdi_home"
+        android:title="@string/home"/>
+    <item
+        android:id="@+id/ic_love"
+        android:icon="@drawable/ic_heart_outline"
+        android:title="@string/lovetext"/>
+    <item
+        android:id="@+id/ic_recommend"
+        android:icon="@drawable/mdi_music_box_multiple"
+        android:title="@string/recommend"/>
+    <item
+        android:id="@+id/ic_user"
+        android:icon="@drawable/ic_person"
+        android:title="@string/user"/>
+
+
+</menu>

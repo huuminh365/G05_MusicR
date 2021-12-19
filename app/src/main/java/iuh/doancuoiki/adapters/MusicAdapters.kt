@@ -1,12 +1,10 @@
 package iuh.doancuoiki.adapters
-
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -39,7 +37,10 @@ class MusicAdapters(val context: Context, val layoutId: Int, val songs: ArrayLis
             intent.putExtras(bundle)
             context.startActivity(intent)
         }
+
     }
+
+
 
     override fun getItemCount(): Int {
         return songs.size
@@ -54,7 +55,7 @@ class MusicAdapters(val context: Context, val layoutId: Int, val songs: ArrayLis
             name = itemView.findViewById(R.id.name)
             singer = itemView.findViewById(R.id.singer)
             image = itemView.findViewById(R.id.image)
-//            button_loveSong = itemView.findViewById(R.id.button_loveSong)
+
         }
     }
 }

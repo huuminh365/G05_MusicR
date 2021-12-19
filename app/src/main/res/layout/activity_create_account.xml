@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     app:chainUseRtl="true"
     tools:context=".views.CreateAccountActivity"
-    tools:ignore="Autofill">
+    tools:ignore="Autofill"
+    android:background="@color/backgound">
 
 
     <Button
         android:id="@+id/sign_in"
-        android:layout_width="339dp"
-        android:layout_height="51dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginEnd="37dp"
         android:background="@drawable/gradient_color"
@@ -36,8 +37,9 @@
         android:layout_marginEnd="99dp"
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/walter_turncoat"
-        android:text="CREATE ACCOUNT"
+        android:text="@string/create_account"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,8 +47,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="360dp"
-        android:layout_height="240dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="21dp"
         android:layout_marginEnd="26dp"
@@ -60,13 +62,17 @@
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            app:boxBackgroundColor="@color/white">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:boxStrokeColor="@color/green_milk"
+            app:boxStrokeErrorColor="@android:color/holo_red_light"
+            app:hintTextColor="@android:color/darker_gray">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/custom_backgound"
                 android:hint="@string/user_name" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -74,14 +80,19 @@
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             app:boxBackgroundColor="@color/white"
-            app:passwordToggleEnabled="true">
+            android:layout_marginBottom="10dp"
+            app:passwordToggleEnabled="true"
+            app:boxStrokeColor="@color/green_milk"
+            app:boxStrokeErrorColor="@android:color/holo_red_light"
+            app:hintTextColor="@android:color/darker_gray">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/custom_backgound"
                 android:hint="@string/password"
                 android:password="true" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -89,14 +100,18 @@
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             app:boxBackgroundColor="@color/white"
-            app:passwordToggleEnabled="true">
+            app:passwordToggleEnabled="true"
+            app:boxStrokeColor="@color/green_milk"
+            app:boxStrokeErrorColor="@android:color/holo_red_light"
+            app:hintTextColor="@android:color/darker_gray">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/confirm_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/custom_backgound"
                 android:hint="@string/confirm_password"
                 android:password="true" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -105,8 +120,8 @@
 
     <Button
         android:id="@+id/create_account"
-        android:layout_width="339dp"
-        android:layout_height="51dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
         android:layout_marginEnd="37dp"
         android:layout_marginBottom="20dp"
@@ -123,12 +138,12 @@
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
-        android:layout_width="334dp"
-        android:layout_height="51dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="35dp"
         android:layout_marginTop="29dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginEnd="37dp"
         android:layout_marginBottom="107dp"
         android:fontFamily="@font/cabin"
         android:minHeight="60dp"
@@ -139,5 +154,4 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_in" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

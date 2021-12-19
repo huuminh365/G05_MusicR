@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.MainActivity">
-
+    tools:context=".views.SignInActivity"
+    android:background="@color/backgound"
+    >
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="390dp"
-        android:layout_height="47dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:paddingLeft="-300dp"
+        android:paddingLeft="-250dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.411"
@@ -66,8 +67,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="380dp"
-        android:layout_height="160dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:orientation="vertical"
@@ -80,8 +81,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_user_name"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Username"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -91,10 +92,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username"
-                android:layout_width="360dp"
-                android:layout_height="65dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_backgound"
                 android:fontFamily="@font/cabin"
                 android:paddingTop="24dp"
                 android:textColor="@color/black" />
@@ -103,8 +103,8 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_password"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:hint="Password"
             android:paddingLeft="10dp"
@@ -120,11 +120,9 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
-                android:layout_width="360dp"
-                android:layout_height="65dp"
-
-                android:layout_marginRight="20dp"
-                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_backgound"
                 android:fontFamily="@font/cabin"
                 android:paddingTop="24dp"
                 android:paddingEnd="20dp"
@@ -138,12 +136,12 @@
 
     <Button
         android:id="@+id/sign_in"
-        android:layout_width="341dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-        android:layout_marginStart="35dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginEnd="20dp"
         android:angle="270"
         android:background="@drawable/gradient_color"
         android:fontFamily="@font/walter_turncoat"
@@ -160,12 +158,12 @@
 
     <Button
         android:id="@+id/create_account"
-        android:layout_width="341dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:angle="270"
         android:background="@drawable/gradient_color"
         android:fontFamily="@font/walter_turncoat"
@@ -179,15 +177,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_in" />
-
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
-        android:layout_width="343dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="33dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="88dp"
         android:fontFamily="@font/cabin"
         android:minHeight="48dp"
@@ -198,5 +195,4 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/create_account" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

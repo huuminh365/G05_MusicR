@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.MaterialComponents.BottomAppBar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgound"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".views.MusicDetailsActivity">
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="55dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="-250dp"
+            app:srcCompat="@drawable/icon_color" />
+
+        <EditText
+            android:id="@+id/find"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/rounded_edittext"
+            android:drawableLeft="@drawable/ic_baseline_search_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Find song"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="5dip"
+            android:paddingStart="16dp"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageview_search_error"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_marginStart="20dp"
+            app:srcCompat="@drawable/blod" />
+
+        <TextView
+            android:id="@+id/text_notify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/cabin"
+            android:text="@string/text_notify"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22dp" />
+
+
+    </LinearLayout>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/backgound">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/homeButton"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/backgound"
+                    app:srcCompat="@drawable/mdi_home"
+                    app:tint="@color/green_milk" />
+
+                <TextView
+                    android:id="@+id/homeText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home"
+                    android:textAlignment="center"
+                    android:textColor="@color/green_milk"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/music"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/loveButton"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/backgound"
+                    app:srcCompat="@drawable/ic_heart_outline"
+                    app:tint="@color/green_milk" />
+
+                <TextView
+                    android:id="@+id/lovetext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lovetext"
+                    android:textAlignment="center"
+                    android:textColor="@color/green_milk"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/recommend"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/recommendButton"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/backgound"
+                    app:srcCompat="@drawable/mdi_music_box_multiple"
+                    app:tint="@color/green_milk" />
+
+                <TextView
+                    android:id="@+id/recommendText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Recommend"
+                    android:textAlignment="center"
+                    android:textColor="@color/green_milk" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/userView"
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:backgroundTint="@color/backgound"
+                    app:srcCompat="@drawable/ic_person"
+                    app:tint="@color/green_milk" />
+
+                <TextView
+                    android:id="@+id/userText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user"
+                    android:textAlignment="center"
+                    android:textColor="@color/green_milk" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

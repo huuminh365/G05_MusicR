@@ -63,7 +63,7 @@ class SignInActivity : AppCompatActivity() {
                                 Log.d("FACEBOOKDATA", obj.getString("email"))
                                 Log.d("FACEBOOKDATA", obj.getString("picture"))
                             }
-                            startActivity(Intent(this@SignInActivity, ListSongActivity::class.java))
+                            startActivity(Intent(this@SignInActivity, HomeActivity::class.java))
                             toast("signed in successfully")
 
                         }catch (e: Exception){
@@ -88,7 +88,7 @@ class SignInActivity : AppCompatActivity() {
         super.onStart()
         val user: FirebaseUser? = firebaseAuth.currentUser // check xem da dang nhap chua, yes-> home
         user?.let {
-            startActivity(Intent(this, ListSongActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
             toast("welcome back")
         }
     }
@@ -96,7 +96,7 @@ class SignInActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)  {
         super.onActivityResult(requestCode, resultCode, data)
         callbackManage.onActivityResult(requestCode, resultCode, data)
-        setContentView(R.layout.activity_listsong)
+        setContentView(R.layout.activity_song_home)
     }
 
 
@@ -105,12 +105,11 @@ class SignInActivity : AppCompatActivity() {
     private fun signInUser() {
         signInEmail = username.text.toString().trim()
         signInPassword = password.text.toString().trim()
-
         if (notEmpty()) {
             firebaseAuth.signInWithEmailAndPassword(signInEmail, signInPassword)
                 .addOnCompleteListener { signIn ->
                     if (signIn.isSuccessful) {
-                        startActivity(Intent(this, ListSongActivity::class.java))
+                        startActivity(Intent(this, HomeActivity::class.java))
                         toast("signed in successfully")
                         finish()
                     } else {
