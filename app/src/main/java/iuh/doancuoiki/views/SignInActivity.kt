@@ -33,10 +33,12 @@ class SignInActivity : AppCompatActivity() {
         signInInputsArray = arrayOf(username, password)
         create_account.setOnClickListener {
             startActivity(Intent(this, CreateAccountActivity::class.java))
+            finish()
         }
 
         sign_in.setOnClickListener {
             signInUser()
+
         }
 
         login_button.setOnClickListener {
@@ -88,7 +90,7 @@ class SignInActivity : AppCompatActivity() {
         super.onStart()
         val user: FirebaseUser? = firebaseAuth.currentUser // check xem da dang nhap chua, yes-> home
         user?.let {
-            startActivity(Intent(this, HomeActivity::class.java))
+            startActivity(Intent(this, SplashActivity::class.java))
             toast("welcome back")
         }
     }
@@ -96,7 +98,7 @@ class SignInActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)  {
         super.onActivityResult(requestCode, resultCode, data)
         callbackManage.onActivityResult(requestCode, resultCode, data)
-        setContentView(R.layout.activity_song_home)
+        setContentView(R.layout.activity_home)
     }
 
 

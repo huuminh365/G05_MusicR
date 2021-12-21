@@ -12,10 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DoAnCuoiKi">
         <activity
-            android:name=".views.LyricsActivity"
+            android:name=".views.ChordActivity"
             android:exported="true" />
         <activity
-            android:name=".views.RecommendActivity"
+            android:name=".views.FavActivity"
+            android:exported="true" />
+        <activity
+            android:name=".views.SplashActivity"
+            android:exported="true" />
+        <activity
+            android:name=".views.TopMusicActivity"
+            android:exported="true" />
+        <activity
+            android:name=".views.SignInActivity"
             android:exported="true" />
         <activity
             android:name=".views.UserActivity"
@@ -40,25 +49,22 @@
 
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
-        </activity> <!-- ListSongActivity -->
+        </activity>
         <activity
-            android:name=".views.SignInActivity"
+            android:name=".views.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- MainActivity -->
+        </activity>
         <activity
-            android:name=".views.MainActivity"
+            android:name=".views.HomeActivity"
             android:exported="true" /> <!-- MusicDetailsActivity -->
         <activity
             android:name=".views.MusicDetailsActivity"
             android:exported="true" /> <!-- SignInActivity -->
-        <activity
-            android:name=".views.HomeActivity"
-            android:exported="true" /> <!-- CreateAccountActivity -->
         <activity
             android:name=".views.CreateAccountActivity"
             android:exported="true" />

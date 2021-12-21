@@ -1,20 +1,14 @@
 package iuh.doancuoiki.objects
 
 import android.content.Context
-import android.graphics.Color
-import android.text.SpannableString
-import android.text.SpannableStringBuilder
-import android.text.Spanned
-import android.text.style.DynamicDrawableSpan
-import android.text.style.ForegroundColorSpan
-import android.text.style.ImageSpan
 import android.widget.ImageView
-import android.widget.TextView
+
 import com.google.android.gms.tasks.Task
-import com.google.firebase.database.DataSnapshot
+
 import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
-import com.squareup.okhttp.internal.DiskLruCache
+
 import iuh.doancuoiki.utils.FirebaseUtils
 import com.squareup.picasso.Picasso
 import iuh.doancuoiki.R
@@ -28,7 +22,7 @@ class Song() {
     var lyrics : String? = null
     var rating : Double? = 0.0
     var view : Double ?= 0.0
-
+    var status : Boolean?=false
     constructor(doc : DocumentSnapshot) : this() {
         id = doc.id
         name = doc.getString("name")
@@ -40,7 +34,7 @@ class Song() {
         rating = doc.getDouble("rating")
         lyrics = doc.getString("lyrics")
         view = doc.getDouble("view")
-
+        status = doc.getBoolean("status")
     }
 
     fun set() : Task<String> {
@@ -51,7 +45,8 @@ class Song() {
             "image" to image,
             "rating" to rating,
             "lyrics" to lyrics,
-            "view" to view
+            "view" to view,
+            "status" to status
         )
 
         if(id != null){
@@ -60,8 +55,6 @@ class Song() {
                     return@continueWith id
                 }
         }else{
-            // Return id from the new DocumentReference,
-            // if null : return empty string
 
             return FirebaseUtils.db.collection(collection).add(song)
                 .continueWith { task ->
@@ -70,13 +63,11 @@ class Song() {
         }
     }
 
-    fun setPic(context : Context, imageView : ImageView) {
+    fun setPic(context: Context, imageView: ImageView) {
         if (image != null) {
             // Get download url, and let Picasso load the image url into imageView
             Picasso.get().load(image)
                 .placeholder(R.drawable.ic_broken_img)
-//                .resize(50, 50)
-//                .centerCrop()
                 .into(imageView)
         } else {
             Picasso.get().load(R.drawable.ic_broken_img).into(imageView)
@@ -89,16 +80,19 @@ class Song() {
         fun get() : Task<QuerySnapshot> {
             return FirebaseUtils.db.collection(collection).get()
         }
-
         fun getRecent() : Task<QuerySnapshot> {
-            // Get 10 first songs
             return FirebaseUtils.db.collection(collection)
-                .orderBy("rating")
-//                .limit( 1)
-                .get()
+                .orderBy("name", Query.Direction.DESCENDING).get()
 
         }
-
+        fun getRating(): Task<QuerySnapshot>{
+            return FirebaseUtils.db.collection(collection)
+                .orderBy("rating", Query.Direction.DESCENDING).limit(10).get()
+        }
+        fun getView(): Task<QuerySnapshot>{
+            return FirebaseUtils.db.collection(collection)
+                .orderBy("view", Query.Direction.DESCENDING).limit(10).get()
+        }
         fun get(id : String) : Task<DocumentSnapshot> {
             return FirebaseUtils.db.collection(collection).document(id).get()
         }

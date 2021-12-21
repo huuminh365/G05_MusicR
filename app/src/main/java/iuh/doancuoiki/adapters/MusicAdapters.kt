@@ -5,31 +5,70 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.firestore.FieldValue
 import iuh.doancuoiki.R
 import iuh.doancuoiki.objects.Song
+import iuh.doancuoiki.utils.FirebaseUtils
 import iuh.doancuoiki.views.MusicDetailsActivity
 
 
 class MusicAdapters(val context: Context, val layoutId: Int, val songs: ArrayList<Song>):
     RecyclerView.Adapter<MusicAdapters.ViewHolder>(){
-
+    public val fav_songs = ArrayList<String>();
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        // Create a new view, which defines the UI of the list item
         var view : View = LayoutInflater.from(parent.context)
             .inflate(layoutId, parent, false)
         return ViewHolder(layoutId, view)
     }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // Apply data into each view
         val song = songs[position]
         holder.name.text = song.name
         holder.singer.text = song.singer
         song.setPic(context, holder.image)
+        if(song.status == true) holder.btnFavorite.isChecked = true
 
+        holder.btnFavorite.setOnCheckedChangeListener { compoundButton, isChecked ->
+            if(isChecked) {
+                fav_songs.add(song.id.toString())
+                FirebaseUtils.db
+                    .collection("users")
+                    .document(FirebaseUtils.firebaseAuth.currentUser!!.uid)
+                    .update(
+                        "fav_songs",
+                        FieldValue.arrayUnion(song.id.toString())
+                    )
+                FirebaseUtils.db
+                    .collection("PTUD")
+                    .document(song.id.toString())
+                    .update(
+                        "status",
+                        true)
+                Toast.makeText(context, "add to favorite songs successfully!!", Toast.LENGTH_SHORT).show()
+            }else{
+                fav_songs.remove(song.id.toString())
+                FirebaseUtils.db
+                    .collection("users")
+                    .document(FirebaseUtils.firebaseAuth.currentUser!!.uid)
+                    .update(
+                        "fav_songs",
+                        FieldValue.arrayRemove(song.id.toString())
+                    )
+                FirebaseUtils.db
+                    .collection("PTUD")
+                    .document(song.id.toString())
+                    .update(
+                        "status",
+                        false)
+
+                Toast.makeText(context, "remove favorite song huhu", Toast.LENGTH_SHORT).show()
+            }
+        }
         holder.itemView.setOnClickListener {
             val intent = Intent(context, MusicDetailsActivity::class.java)
             val bundle = Bundle()
@@ -39,9 +78,6 @@ class MusicAdapters(val context: Context, val layoutId: Int, val songs: ArrayLis
         }
 
     }
-
-
-
     override fun getItemCount(): Int {
         return songs.size
     }
@@ -50,12 +86,14 @@ class MusicAdapters(val context: Context, val layoutId: Int, val songs: ArrayLis
         var name : TextView
         var singer : TextView
         var image : ImageView
+        var btnFavorite : CheckBox
+        var status : Boolean ?= false
 
         init {
             name = itemView.findViewById(R.id.name)
             singer = itemView.findViewById(R.id.singer)
             image = itemView.findViewById(R.id.image)
-
+            btnFavorite = itemView.findViewById(R.id.cbHeart)
         }
     }
 }

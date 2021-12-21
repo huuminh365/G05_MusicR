@@ -8,16 +8,17 @@
     <string name="user_name">User name</string>
     <string name="musics">musics</string>
     <string name="home">Home</string>
-    <string name="name_song">Name song: </string>
-    <string name="lyrics">Lyrics</string>
+    <string name="name_song">Name song</string>
+    <string name="lyrics">Lyrics: </string>
     <string name="rating_number">rating_number</string>
     <string name="user">User</string>
     <string name="recommend">Recommend</string>
-    <string name="lovetext">Love song</string>
+    <string name="lovetext">Favorite</string>
     <string name="text_notify">Ngại thế, tìm kiếm này bá đạo quá
 chúng tôi không tìm thấy</string>
     <string name="personal_info">Info</string>
     <string name="sign_in">Let go</string>
+    <string name="top_music">Top music</string>
     <string name="names">Name</string>
     <string name="phone">Phone</string>
     <string name="email">Email</string>
@@ -28,10 +29,16 @@ chúng tôi không tìm thấy</string>
     <string name="sign_out">Sign out</string>
     <string name="sign_in_another">Sign in another account</string>
     <string name="text_loading">Đợi một xí nhaaa!!!</string>
-    <string name="name_singer">Name singer: </string>
+    <string name="name_singer">Name singer</string>
     <string name="next_song">Next Song</string>
     <string name="view">1000</string>
     <string name="viewsong">View: </string>
     <string name="recommend_text">Bài hát tương tự: </string>
+    <string name="song_rating">Top songs rating: </string>
+    <string name="song_view">Top songs view: </string>
+    <string name="xem_them">Xem thêm: </string>
+    <string name="hop_am">Chords</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

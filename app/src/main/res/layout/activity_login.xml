@@ -94,9 +94,11 @@
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:background="@drawable/custom_backgound"
                 android:fontFamily="@font/cabin"
                 android:paddingTop="24dp"
+                android:maxLines="1"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -122,10 +124,12 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:background="@drawable/custom_backgound"
                 android:fontFamily="@font/cabin"
                 android:paddingTop="24dp"
                 android:paddingEnd="20dp"
+                android:maxLines="1"
                 android:password="true"
                 android:saveEnabled="false"
                 android:textColor="@color/black" />

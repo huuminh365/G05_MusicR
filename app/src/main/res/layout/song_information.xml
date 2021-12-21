@@ -77,12 +77,13 @@
 
             <CheckBox
                 android:id="@+id/cbHeart"
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:useMaterialThemeColors="false"
+                android:layout_weight="1"
+
                 android:button="@drawable/selector_wishlistsong"
-                android:layout_weight="1" />
+                android:checked="false"
+                app:useMaterialThemeColors="false" />
 
         </LinearLayout>
 

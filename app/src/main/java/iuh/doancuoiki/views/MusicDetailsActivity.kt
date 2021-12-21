@@ -1,56 +1,52 @@
 package iuh.doancuoiki.views
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
-import android.util.Log
 import android.widget.TextView
 
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 import iuh.doancuoiki.R
-import iuh.doancuoiki.adapters.MusicAdapters
+import iuh.doancuoiki.adapters.ViewPagerAdapter
 import iuh.doancuoiki.objects.Song
 import kotlinx.android.synthetic.main.activity_music_details.*
 
 
 class MusicDetailsActivity : AppCompatActivity() {
-    var song: Song?=null
-    val songs = ArrayList<Song>()
-    var adapterQuickView: MusicAdapters? = null
+    var song : Song ?=null
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_music_details)
-        recommend_button.setOnClickListener {
-            startActivity(Intent(this, RecommendActivity::class.java))
+        ic_back.setOnClickListener {
+            startActivity(Intent(this,HomeActivity::class.java))
         }
         val bundle = intent.extras
         val id = bundle!!.getString("song")
         Song.get(id!!)
             .addOnSuccessListener{ documentSnapshot ->
                 song = Song(documentSnapshot)
-                namesong.text = "Name song: " +  song!!.name
-                singer.text = "Name singer: " + song!!.singer
-                text_view.text = "View: " + song!!.view
-                val lyris = song!!.lyrics
-
-                val regex = Regex("\\[[A-Z|a-z|0-9|#|/]*\\]")
-                val spannable = SpannableString(lyris)
-                val matches = regex.findAll(lyris as CharSequence)
-                matches.forEach {match ->
-                    match.range.forEach {
-                        val startl = it
-                        val endl = it + match.value.length/match.range.count()
-                        spannable.setSpan(ForegroundColorSpan(Color.rgb(70,166,25)),startl,endl, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-                    }
-                }
-                lyrics_view.setText(spannable, TextView.BufferType.SPANNABLE)
+                namesong.text =   song!!.name
+                singer.text =  song!!.singer
+                text_view.text = song!!.view.toString()
                 song!!.setPic(this,imageSong)
                 ratingBar.rating = song!!.rating!!.toFloat()
                 rating_number.text = song!!.rating!!.toFloat().toString()
             }
-
+        setUpTabs()
+        }
+    private fun setUpTabs() {
+        val viewPager = findViewById<ViewPager>(R.id.viewPager)
+        val tabs = findViewById<TabLayout>(R.id.tab_layout)
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        adapter.addFragment(LyricsFragment(), "Lyrics")
+        adapter.addFragment(RecommendFragment(), "Recommend")
+        viewPager.adapter = adapter
+        tabs.setupWithViewPager(viewPager)
     }
+    @JvmName("getSong1")
+    public fun getSong(): Song? {
+        return song
+    }
+
 }

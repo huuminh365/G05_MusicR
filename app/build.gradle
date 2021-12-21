@@ -7,17 +7,14 @@ plugins {
 
 android {
     compileSdk 31
-
     defaultConfig {
         applicationId "iuh.doancuoiki"
         minSdk 21
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -66,10 +63,18 @@ dependencies {
     androidTestImplementation('androidx.test.espresso:espresso-core:3.4.0')
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-
+    implementation 'com.ms-square:expandableTextView:0.1.4'
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.7.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+
+    //scroll text
+    implementation 'com.borjabravo:readmoretextview:2.1.0'
+
+    //search
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
 
 }

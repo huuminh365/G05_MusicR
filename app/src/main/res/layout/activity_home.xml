@@ -4,19 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/Widget.MaterialComponents.BottomAppBar"
     tools:context=".views.HomeActivity"
+    style="@style/Widget.MaterialComponents.BottomAppBar"
+    android:background="@color/backgound"
     android:focusable="true"
     android:focusableInTouchMode="true">
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/loading"
-        app:layout_constraintBottom_toTopOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        android:layout_marginBottom="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="-250dp"
+            app:srcCompat="@drawable/icon_color" />
+
+        <EditText
+            android:id="@+id/find"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:background="@drawable/rounded_edittext"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="15dp"
+            android:drawableLeft="@drawable/ic_baseline_search_24"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Find song"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:paddingStart="16dp"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="12dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/songList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/song_information">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/toolbar"
@@ -68,7 +126,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/loveButton"
+                    android:id="@+id/lovebtn"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center"
@@ -89,14 +147,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/recommend"
+                android:id="@+id/topmusic"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.2"
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/recommendButton"
+                    android:id="@+id/top_music_btn"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_gravity="center"
@@ -107,10 +165,37 @@
                     app:tint="@color/green_milk" />
 
                 <TextView
-                    android:id="@+id/recommendText"
+                    android:id="@+id/top_music_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Recommend"
+                    android:text="@string/top_music"
+                    android:textAlignment="center"
+                    android:textColor="@color/green_milk" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/chord_btn"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/backgound"
+                    app:srcCompat="@drawable/music_icon"
+                    app:tint="@color/green_milk" />
+
+                <TextView
+                    android:id="@+id/chord_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hop_am"
                     android:textAlignment="center"
                     android:textColor="@color/green_milk" />
             </LinearLayout>
@@ -122,7 +207,7 @@
                 android:orientation="vertical">
 
                 <ImageButton
-                    android:id="@+id/userView"
+                    android:id="@+id/userbtn"
                     android:layout_width="32dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -140,4 +225,5 @@
             </LinearLayout>
         </LinearLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
