@@ -61,14 +61,16 @@ class IntroActivity : AppCompatActivity() {
             if(introSliderViewPaper.currentItem + 1 < introSlideAdapter.itemCount){
                 introSliderViewPaper.currentItem +=1
             }else{
-                Intent(applicationContext, SplashActivity::class.java).also {
+                Intent(applicationContext, SignInActivity::class.java).also {
                     startActivity(it)
+                    finish()
                 }
             }
         }
         textSkipIntro.setOnClickListener {
-            Intent(applicationContext, SplashActivity::class.java).also {
+            Intent(applicationContext, SignInActivity::class.java).also {
                 startActivity(it)
+                finish()
             }
         }
 

@@ -129,14 +129,14 @@
                 app:tabTextColor="@color/green_milk">
 
                 <com.google.android.material.tabs.TabItem
-                    android:id="@+id/song_recommend"
+                    android:id="@+id/song_lyrics"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
                     android:layout_gravity="center" />
 
                 <com.google.android.material.tabs.TabItem
-                    android:id="@+id/song_lyrics"
+                    android:id="@+id/song_recommend"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center" />

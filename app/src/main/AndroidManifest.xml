@@ -18,7 +18,7 @@
             android:name=".views.FavActivity"
             android:exported="true" />
         <activity
-            android:name=".views.SplashActivity"
+            android:name=".views.IntroActivity"
             android:exported="true" />
         <activity
             android:name=".views.TopMusicActivity"
@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".views.IntroActivity"
+            android:name=".views.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

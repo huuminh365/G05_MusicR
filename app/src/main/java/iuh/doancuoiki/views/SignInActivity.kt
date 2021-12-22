@@ -90,7 +90,7 @@ class SignInActivity : AppCompatActivity() {
         super.onStart()
         val user: FirebaseUser? = firebaseAuth.currentUser // check xem da dang nhap chua, yes-> home
         user?.let {
-            startActivity(Intent(this, SplashActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
             toast("welcome back")
         }
     }
@@ -100,8 +100,6 @@ class SignInActivity : AppCompatActivity() {
         callbackManage.onActivityResult(requestCode, resultCode, data)
         setContentView(R.layout.activity_home)
     }
-
-
     private fun notEmpty(): Boolean = signInEmail.isNotEmpty() && signInPassword.isNotEmpty()
 
     private fun signInUser() {
