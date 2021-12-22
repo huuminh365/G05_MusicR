@@ -9,19 +9,22 @@ import iuh.doancuoiki.R
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.song_information.view.*
 import com.squareup.picasso.Picasso
 import android.widget.Filter
 import android.widget.Filterable
 import android.widget.Toast
+import com.google.firebase.firestore.FieldValue
+import iuh.doancuoiki.utils.FirebaseUtils
 import iuh.doancuoiki.views.MusicDetailsActivity
 import java.util.*
 import kotlin.collections.ArrayList
 
 class FilterAdapters(var countryList: MutableList<Song>, val context: Context) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>(), Filterable {
-
+    public val fav_songs = ArrayList<String>();
     var countryFilterList = ArrayList<Song>()
 
     init {
@@ -54,6 +57,44 @@ class FilterAdapters(var countryList: MutableList<Song>, val context: Context) :
                 bundle.putString("song", model.id)
                 intent.putExtras(bundle)
                 context.startActivity(intent)
+            }
+            var btnFavorite = itemView.findViewById<CheckBox>(R.id.cbHeart)
+            if(model.status == true) btnFavorite.isChecked == true
+            btnFavorite.setOnCheckedChangeListener { compoundButton, isChecked ->
+                if(isChecked) {
+                    fav_songs.add(model.id.toString())
+                    FirebaseUtils.db
+                        .collection("users")
+                        .document(FirebaseUtils.firebaseAuth.currentUser!!.uid)
+                        .update(
+                            "fav_songs",
+                            FieldValue.arrayUnion(model.id.toString())
+                        )
+                    FirebaseUtils.db
+                        .collection("PTUD")
+                        .document(model.id.toString())
+                        .update(
+                            "status",
+                            true)
+                    Toast.makeText(context, "add to favorite songs successfully!!", Toast.LENGTH_SHORT).show()
+                }else{
+                    fav_songs.remove(model.id.toString())
+                    FirebaseUtils.db
+                        .collection("users")
+                        .document(FirebaseUtils.firebaseAuth.currentUser!!.uid)
+                        .update(
+                            "fav_songs",
+                            FieldValue.arrayRemove(model.id.toString())
+                        )
+                    FirebaseUtils.db
+                        .collection("PTUD")
+                        .document(model.id.toString())
+                        .update(
+                            "status",
+                            false)
+
+                    Toast.makeText(context, "remove favorite song huhu", Toast.LENGTH_SHORT).show()
+                }
             }
 
         }

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Music R</string>
-    <string name="facebook_app_id">1247347469085122</string>
-    <string name="fb_login_protocol_scheme">fb1247347469085122</string>
+    <string name="facebook_app_id">262668919186168</string>
+    <string name="fb_login_protocol_scheme">fb262668919186168</string>
     <string name="create_account">Create account</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm password</string>
@@ -14,8 +14,7 @@
     <string name="user">User</string>
     <string name="recommend">Recommend</string>
     <string name="lovetext">Favorite</string>
-    <string name="text_notify">Ngại thế, tìm kiếm này bá đạo quá
-chúng tôi không tìm thấy</string>
+    <string name="text_notify">Ngại thế, tìm kiếm này bá đạo quá chúng tôi không tìm thấy</string>
     <string name="personal_info">Info</string>
     <string name="sign_in">Let go</string>
     <string name="top_music">Top music</string>

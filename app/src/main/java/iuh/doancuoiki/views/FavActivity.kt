@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import iuh.doancuoiki.R
 import iuh.doancuoiki.adapters.MusicAdapters
@@ -22,6 +23,7 @@ class FavActivity : AppCompatActivity() {
     val list_id = ArrayList<String>()
     val songs = ArrayList<Song>()
     var adapterQuickView: MusicAdapters? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fav)
@@ -37,15 +39,8 @@ class FavActivity : AppCompatActivity() {
         chord_btn.setOnClickListener {
             startActivity(Intent(this, ChordActivity::class.java))
         }
-
-
         adapterQuickView = MusicAdapters(this, R.layout.song_information, songs)
         songList.adapter = adapterQuickView
-        // Get drawable object
-
-        // Create a DividerItemDecoration whose orientation is vertical
-
-        // Set the drawable on it
 
         FirebaseFirestore.getInstance().collection("users")
             .document(FirebaseUtils.firebaseAuth.currentUser!!.uid).get()
@@ -83,7 +78,10 @@ class FavActivity : AppCompatActivity() {
                     "fromCloudFirestore: Error loading ContactInfo data from Firestore - " + e.message
                 );
             };
+
     }
+
+
 
 
 }
