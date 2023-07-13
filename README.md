@@ -5,7 +5,7 @@ App Music R recommend music
 Application to view song chords on the Android platform. 
 Display information of currently playing song and suggest similar songs using Machine Learning
 
-App develoment by IUH team, team member
+This is the course project "Application Development" made by my team:
 1. Trinh Thi Bao Bao
 2. Nguyen Thi Thanh Hoa
 3. Phan Chi Trung
