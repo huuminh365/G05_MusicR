@@ -13,6 +13,10 @@ App develoment by IUH team, team member
    
 Name app: Music R meaning Recommend music - recommend similar song when u using app to find song.
 
+## Database
+Hosting using Firebase Store and Firebase Realtime
+Data crawl at hopamchuan.com
+
 ## Main function
 
 ### 1. Find song
@@ -33,8 +37,6 @@ Name app: Music R meaning Recommend music - recommend similar song when u using 
 ### 6. Show chords
 ![image](https://github.com/huuminh365/G05_MusicR/assets/67813560/b1184b9a-4d6b-48b7-a282-1b82509a9d2b)
 
-## Database
-Hosting using firebase
 
 ## Interface when login and logout
 
